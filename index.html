@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>糸島夏休み明けプロジェクト2025</title>
+
+  <!-- OGP / SNS シェア用 -->
+  <meta property="og:title" content="糸島夏休み明けプロジェクト2025">
+  <meta property="og:description" content="夏休み明け初日、糸島に子どもの居場所をたくさん開けます。">
+  <meta property="og:image" content="./img/hero-og-1200x630.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #E9F7FF;
+      --ink: #2F4668;
+      --muted: #4B6282;
+      --accent: #5C8EDC;
+      --card: #FFFFFF;
+      --shadow: 0 10px 28px rgba(17,24,39,.08), 0 2px 6px rgba(17,24,39,.06);
+      --max-w: 1100px;
+      --radius: 12px;
+    }
+    body{
+      margin:0; font-family: 'Noto Sans JP', sans-serif;
+      color:var(--muted); background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    .container{max-width:var(--max-w); margin:auto; padding: 24px;}
+
+    .hero{ margin-top: 8px; }
+    .hero-grid{
+      display:grid; gap: 28px;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items:start;
+    }
+    @media(max-width: 900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+    }
+
+    h1.title{
+      font-family:'Hina Mincho', serif;
+      color:var(--ink);
+      font-size: clamp(30px, 5.4vw, 58px);
+      line-height:1.2;
+      margin: 0 0 6px;
+    }
+    .title .highlight{ color: var(--accent); }
+
+    .subtitle{
+      margin: 0;
+      font-size: clamp(16px, 2.2vw, 20px);
+      line-height: 1.7;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .intro-card{
+      margin-top: 14px;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px 18px;
+      border: 1px solid rgba(0,0,0,.06);
+      max-width: 100%;
+      white-space: pre-line;
+    }
+    .intro{
+      margin: 0;
+      font-size: 15.5px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .date-pill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 16px; background: var(--card);
+      border-radius: 999px; box-shadow: var(--shadow);
+      color: var(--ink); font-weight:700; margin-top: 16px
+    }
+    .date-pill .firstday{ font-weight:700; margin-left:8px }
+    .eligibility{ margin-top:10px; font-weight:700; color:var(--ink); font-size:14px }
+
+    .media-slot{
+      background: #f2f6fd;
+      border: 1px dashed #c8d6f0;
+      border-radius: var(--radius);
+      min-height: 260px;
+      display:flex; align-items:center; justify-content:center;
+      color:#7a8aa8; font-size: 14px;
+    }
+    .media-slot.filled{ border:0; background:transparent; }
+    .media-slot img, .media-slot picture{
+      max-width:100%; height:auto; border-radius: calc(var(--radius) - 2px);
+      display:block;
+    }
+
+    .card{
+      background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+      padding: 16px; margin: 18px 0;
+      border: 1px solid rgba(0,0,0,.06);
+    }
+    .grid{ display:grid; gap:20px; }
+    .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+    @media(max-width:900px){ .grid.cols-3{ grid-template-columns:1fr 1fr; } }
+    @media(max-width:640px){ .grid.cols-3{ grid-template-columns:1fr; } }
+
+    .place h3{ margin:0 0 4px; font-size:18px; color:var(--ink);}
+    .place h3 a{ color:inherit; text-decoration:none;}
+    .place h3 a:hover{text-decoration:underline;}
+    .place .meta{ font-size:12px; opacity:.8; }
+    .place .time{ margin-top:8px; font-weight:700; color:var(--ink); }
+    .place .desc{ margin-top:8px; font-size:14px; line-height:1.65; }
+
+    footer{ margin-top:40px; padding:20px; font-size:13px; color:#64748b; text-align:center; }
+
+    @media print{
+      @page{ size: A4 portrait; margin: 12mm }
+      .media-slot{ display:none !important; }
+      .hero-grid{ grid-template-columns: 1fr !important; gap: 10px; }
+      .card{ box-shadow: none; border: 1px solid #ddd; }
+      footer{ display:none; }
+    }
+  </style>
+
+  <!-- 設定JSON -->
+  <script id="site-config" type="application/json">{
+    "title": "糸島夏休み明けプロジェクト2025",
+    "titleHtml": "糸島<br><span class='highlight'>夏休み明け</span><br>プロジェクト2025",
+    "subtitle": "夏休み明けの初日、糸島に子どもの居場所をたくさん開けます。",
+    "intro": "夏休み明け，学校がはじまることでゆうつな気持ちになったりつらい思いをする人は多いと思います。子どもさんご本人も保護者の方も，そのゆううつさやつらさの程度がかなり強いひとも少なくないに違いありません。\n\nそこで，糸島の中で子どもに関わる支援をしているみなさんのご協力を得て，夏休み明け学校がはじまる日にふらっと行ける場所をたくさん用意することにしました。\n\nここに来るには予約もなにもいりません。来たいなと思ったら来てもらえればそれでよいのです。ちょっとのぞくだけでもぜ。明日のことは明日考えればよいのです。",
+    "date": "2025-08-27",
+    "dateText": "8月27日（水）",
+    "dateBadge": "夏休み明け初日！",
+    "eligibility": "小学生・中学生・高校生｜だれでも利用できます（予約不要）",
+    "spots": [
+      {
+        "name": "みなも（志摩初）",
+        "link": "https://www.minamoitoshima.com/",
+        "meta": "可也コミュニティセンター敷地内",
+        "time": "9:00–15:00",
+        "desc": "ゆっくりできる子どもの居場所。マンガがたくさん、ハンモック、ボードゲームなどもあります。実は楽器もぬり絵もレゴもある。とりあえず大人から「これしてね」ということが全然ないので、気楽に来てください！"
+      },
+      {
+        "name": "うみのね（二丈深江）",
+        "link": "https://www.google.com/maps/place/%E3%81%86%E3%81%BF%E3%81%8B%E3%81%88%E3%82%8B/@33.5130176,130.128239,17z",
+        "meta": "二丈深江エリア",
+        "time": "9:00–15:00",
+        "desc": "深江の海のそばにある古民家コミュニティスペース「うみかえる」で開かれている居場所です。海岸まで本当にすぐそば。海がこれはもう、めちゃくちゃきれいです。古いお家でギシギシいうけど落ち着ける不思議な場所。夏の間は正直暑いけど，ギシギシいう家がおもしろい！"
+      },
+      {
+        "name": "みんなの居場所（篠原東）",
+        "link": "https://itoshima-jidoclub.com/",
+        "meta": "筑前前原駅から徒歩15分",
+        "time": "10:00–17:00",
+        "desc": "子どもたちが描いた絵が壁一面に描いてあるのが目印の、篠原東の住宅街にある一軒家。ふだんは平日毎日開いています。うちの中ではボードゲームやアイロンビーズが人気。外では水遊びしたり、ツリーハウスでおやつ食べたりできます！思い思いにゆっくり過ごすこともできる場所。"
+      },
+      {
+        "name": "ゆめふうせん（有田中央）",
+        "link": "https://yumefuusen.org/",
+        "meta": "筑前前原駅から車で7分",
+        "time": "9:00–15:00",
+        "desc": "有田の住宅地にある放課後等デイザービス。いつもは放課後だけど，この日は朝から来ても大丈夫。だって夏休み明けだもの。いろいろ考えてつくられた建物で，おもちゃも庭もあって過ごしやすいです。こっそり隠まってもらいましょう。もちろん堂々と行って大丈夫！"
+      },
+      {
+        "name": "わんぱく塾（二丈福井）",
+        "link": "https://www.google.com/maps/place/%E3%82%8F%E3%82%93%E3%81%B1%E3%81%8F%E5%A1%BE/@33.4909618,130.1000922,17z",
+        "meta": "二丈福井エリア",
+        "time": "10:00–16:00",
+        "desc": "ゆらりんこ橋のすぐ近く、２本の川と山に囲まれた、ゆっくり遊べるところです。ヤギが6頭、のんびり草を食んでいます。ふだんは水曜と日曜会員制で開けてますが、今回はふらりと来てOK!"
+      },
+      {
+        "name": "森のフリースクール木立（前原）",
+        "link": "https://www.google.com/maps/place/%E6%A3%AE%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%AB+%E6%9C%A8%E7%AB%8B/",
+        "meta": "前原エリア",
+        "time": "9:00–15:00",
+        "desc": "王丸の森に囲まれた古民家。ふだんはフリースクールとして開いています。水がおいしくて、黒ネコがいて、ゆっくりしても走り回っても大丈夫！"
+      }
+    ]
+  }</script>
+</head>
+
+<body>
+  <div class="container hero">
+    <div class="hero-grid">
+      <div>
+        <h1 class="title">loading...</h1>
+        <p class="subtitle"></p>
+
+        <div class="intro-card"><p class="intro"></p></div>
+        <div class="date-pill"><span>実施日：</span><time>---</time><span class="firstday"></span></div>
+        <div class="eligibility"></div>
+      </div>
+
+      <div class="media-slot" id="media-slot">ここに画像を入れられます</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <section>
+      <h2>参加スポット</h2>
+      <div id="spots-list" class="grid cols-3"></div>
+    </section>
+
+    <section class="card"><h2>参加方法</h2><p>予約不要・無料。直接来ていただいて大丈夫です。困ったらお問い合わせください。</p></section>
+    <section class="card"><h2>対象</h2><p>小学生・中学生・高校生と保護者</p></section>
+    <section class="card" id="contact"><h2>お問い合わせ</h2><p>九州大学 佐々木研究室／糸島子どもの居場所プロジェクト（電話は当日のみ対応：080-7342-2879）</p><p><a href="mailto:minamo.itoshima@gmail.com">メールで聞く</a></p></section>
+  </div>
+
+  <footer>© 2025 糸島子どもの居場所プロジェクト / 九州大学佐々木研究室</footer>
+
+  <script>
+    (function(){
+      const cfg = JSON.parse(document.getElementById('site-config').textContent);
+      document.title = cfg.title;
+      const h1 = document.querySelector('h1.title');
+      if (cfg.titleHtml) h1.innerHTML = cfg.titleHtml; else h1.textContent = cfg.title;
+      document.querySelector('.subtitle').textContent = cfg.subtitle || "";
+      document.querySelector('.intro').textContent = cfg.intro || "";
+      const dp = document.querySelector('.date-pill');
+      dp.querySelector('time').textContent = cfg.dateText;
+      dp.querySelector('.firstday').textContent = cfg.dateBadge || "";
+      document.querySelector('.eligibility').textContent = cfg.eligibility || "";
+      const list = document.getElementById('spots-list');
+      cfg.spots.forEach(s=>{
+        const el=document.createElement('article');
+        el.className="place card";
+        el.innerHTML=`<h3><a href="${s.link}" target="_blank" rel="noopener">${s.name}</a></h3>
+          <div class="meta">${s.meta||""}</div>
+          <div class="time">${s.time||""}</div>
+          <p class="desc">${s.desc||""}</p>`;
+        list.appendChild(el);
+      });
+      const media=document.getElementById('media-slot');
+      media.classList.add('filled');
+      media.innerHTML=`
+        <picture>
+          <source srcset="./img/hero-800.webp 800w, ./img/hero-1600.webp 1600w" type="image/webp">
+          <img src="./img/hero-1600.jpg"
+               srcset="./img/hero-1600.jpg 1600w"
+               sizes="(max-width: 900px) 100vw, 40vw"
+               alt="糸島の会場と青空"
+               loading="eager" decoding="async">
+        </picture>`;
+    })();
+  </script>
+</body>
+</html>
